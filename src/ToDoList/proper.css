@@ -1,0 +1,210 @@
+/* --- Improved CSS Styles --- */
+
+/* 🎨 Global Reset and Typography */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  /* Switched to a more modern, slightly warmer dark theme font stack */
+  font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+/* 🌙 Body and Background */
+body {
+  /* Elevated Dark Gradient: Deeper indigo/violet tones for a premium look */
+  background: linear-gradient(135deg, #181136, #2d1959);
+  color: #e0e0f0; /* Softer white for better contrast with the dark background */
+  min-height: 100vh; /* Use min-height for content that might exceed the viewport */
+  display: flex; /* Ensure section centers content vertically */
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🖼️ Centering Container */
+.section {
+  /* Removed height: 100vh here as it's better handled by the body/min-height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px; /* Added padding for smaller screens */
+}
+
+/* ✨ Glassmorphism Container */
+.container {
+  /* More pronounced Glassmorphism: Lighter background, softer blur */
+  background: rgba(66, 59, 59, 0.08); /* Slightly lighter for better 'shine' */
+  backdrop-filter: blur(25px) saturate(150%); /* Increased blur and saturation */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+  border-radius: 25px; /* Softer, larger radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+  padding: 40px; /* Increased padding */
+  width: 500px; /* Slightly wider */
+  max-width: 90%; /* Responsive cap */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-height: 520px; /* Use min-height */
+}
+
+.container:hover {
+  transform: translateY(-6px); /* More noticeable lift */
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6); /* Even deeper shadow on hover */
+}
+
+h1 {
+  font-size: 2rem; /* Slightly larger title */
+  color: #fff;
+  margin: 0 0 5px 0; /* Adjusted margin */
+  letter-spacing: 2px;
+  font-weight: 700; /* Bolder */
+  /* Added a subtle text shadow for pop */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Slightly increased gap */
+  width: 100%;
+}
+
+/* ✏️ Input Field Styling */
+input {
+  flex: 1;
+  padding: 14px 18px; /* Slightly more vertical padding */
+  border-radius: 12px;
+  border: 1px solid transparent; /* Added transparent border for focus effect */
+  background: rgba(255, 255, 255, 0.12);
+  color: #e0e0f0;
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(224, 224, 240, 0.5); /* Adjusted placeholder color */
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  /* Brighter, more defined focus ring matching the primary color */
+  border: 1px solid #947fff;
+  box-shadow: 0 0 15px rgba(148, 127, 255, 0.6);
+}
+
+/* 🚀 Button Base */
+button {
+  padding: 12px 20px; /* More generous padding */
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700; /* Bolder text */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle button shadow */
+}
+
+/* 🟢 Add Button (Primary Action - Green to a vibrant Teal/Aqua) */
+.add-btn {
+  /* A more vibrant, cooler teal gradient */
+  background: linear-gradient(135deg, #00d2b6, #009c85);
+  color: #181136; /* Darker text for contrast */
+}
+
+.add-btn:hover {
+  transform: translateY(-2px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #009c85, #00d2b6); /* Inverted gradient for a pulse effect */
+}
+
+/* 🟣 Edit Button (Secondary Action - Purple) */
+.edit-btn {
+  /* Richer, vibrant purple gradient */
+  background: linear-gradient(135deg, #a064ff, #7a3ed9);
+  color: white;
+}
+
+.edit-btn:hover {
+  transform: scale(1.08); /* More noticeable scale */
+  background: linear-gradient(135deg, #7a3ed9, #a064ff);
+}
+
+/* 🔴 Delete Button (Destructive Action - Red/Crimson) */
+.delete-btn {
+  /* Deeper, more serious crimson gradient */
+  background: linear-gradient(135deg, #ff6b81, #e63946);
+  color: white;
+}
+
+.delete-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #e63946, #ff6b81);
+}
+
+/* 📜 Task Display Area */
+.display {
+  width: 100%;
+  height: 325px;
+  overflow-y: auto;
+  display: flex;
+  padding-top: 5px;
+  flex-direction: column;
+  gap: 12px; /* Increased gap for visual separation */
+  margin-top: 15px; /* Increased top margin */
+  /* Custom scrollbar styles remain good */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.display::-webkit-scrollbar {
+  width: 8px; /* Slightly wider scrollbar */
+}
+.display::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35); /* Brighter thumb */
+  border-radius: 8px;
+}
+.display::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Subtle track background */
+  border-radius: 8px;
+}
+
+/* 📋 Individual Task Item */
+.task {
+  /* More defined item: Solid color for readability, subtle shadow */
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px; /* Increased padding */
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border-left: 5px solid #a064ff; /* Accent border on the left */
+}
+
+.task:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px); /* More noticeable lift */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task h2 {
+  flex: 1;
+  font-size: 1.15rem; /* Slightly larger text */
+  color: #fff;
+  word-wrap: break-word;
+  white-space: normal;
+  font-weight: 500; /* Slightly lighter weight for the task text */
+}
+
+/* Optional: Add a class for completed tasks */
+.task.completed h2 {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Optional: Add an icon to the buttons for better UX (requires HTML/Font Awesome) */
+/* .add-btn::before { content: "➕ "; } */
