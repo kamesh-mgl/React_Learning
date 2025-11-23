@@ -5,7 +5,9 @@ import Theme from "./usememo/Theme";
 // import App from "./List/App";
 // import App from "./colorpicker/App"
 // import App from "./ToDoList/App"
-import App from "./usecontext/App"
+// import App from "./usecontext/App"
+import App from "./redux/App"
+import './index.css'
 
 
 import Count from "./usestate/State";
