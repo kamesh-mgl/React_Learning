@@ -17,7 +17,7 @@ const Users = () => {
       {
         users.map((ele,index)=>{
           return(
-           <div className='user'>
+           <div key={index} className='user'>
             <h1>Name: {ele.name}</h1>
             <h2>Age: {ele.age}</h2>
             <h2>Email: {ele.email}</h2>

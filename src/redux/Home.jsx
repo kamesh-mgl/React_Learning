@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 const Home = () => {
 
     const dispatch = useDispatch();
+    // console.log(useDispatch())
 
     const [formdata, setFormdata] = useState({
         name: "",
