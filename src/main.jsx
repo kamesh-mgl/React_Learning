@@ -9,7 +9,8 @@ import Theme from "./usememo/Theme";
 // import App from "./redux/App"
 // import './index.css'
 // import App from './routing/App'
-import App from './axios/App'
+// import App from './axios/App'
+import App from './hoc/App'
 
 
 import Count from "./usestate/State";
